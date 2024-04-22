@@ -4,218 +4,74 @@
 </div>
 
 <div *ngIf="isTilesView">
-  <div class="row">
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+ <div class="row">
+    <div *ngFor="let instructor of instructors" class="col-12 col-md-3">
       <div class="our-team">
         <div class="picture">
-          <img class="img-fluid" src="https://picsum.photos/130/130?image=1027">
+          <img class="img-fluid" [src]="instructor.picture">
         </div>
-        <div class="team-content">
-          <h3 class="name">Michele Miller</h3>
-          <h4 class="title">202200001@gordoncollege.edu.ph</h4>
+        <div class="team-content">       
+            <h3 class="name">{{ instructor.lastName }}{{ instructor.firstname }}{{ instructor.middlename }}</h3>
+            <h4 class="title">{{ instructor.domainEmail }}</h4>
         </div>
       </div>
     </div>
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-      <div class="our-team">
-        <div class="picture">
-          <img class="img-fluid" src="https://picsum.photos/130/130?image=1027">
-        </div>
-        <div class="team-content">
-          <h3 class="name">Michele Miller</h3>
-          <h4 class="title">202200001@gordoncollege.edu.ph</h4>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-      <div class="our-team">
-        <div class="picture">
-          <img class="img-fluid" src="https://picsum.photos/130/130?image=1027">
-        </div>
-        <div class="team-content">
-          <h3 class="name">Michele Miller</h3>
-          <h4 class="title">202200001@gordoncollege.edu.ph</h4>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-      <div class="our-team">
-        <div class="picture">
-          <img class="img-fluid" src="https://picsum.photos/130/130?image=1027">
-        </div>
-        <div class="team-content">
-          <h3 class="name">Michele Miller</h3>
-          <h4 class="title">202200001@gordoncollege.edu.ph</h4>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-      <div class="our-team">
-        <div class="picture">
-          <img class="img-fluid" src="https://picsum.photos/130/130?image=1027">
-        </div>
-        <div class="team-content">
-          <h3 class="name">Michele Miller</h3>
-          <h4 class="title">202200001@gordoncollege.edu.ph</h4>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-      <div class="our-team">
-        <div class="picture">
-          <img class="img-fluid" src="https://picsum.photos/130/130?image=1027">
-        </div>
-        <div class="team-content">
-          <h3 class="name">Michele Miller</h3>
-          <h4 class="title">202200001@gordoncollege.edu.ph</h4>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-      <div class="our-team">
-        <div class="picture">
-          <img class="img-fluid" src="https://picsum.photos/130/130?image=1027">
-        </div>
-        <div class="team-content">
-          <h3 class="name">Michele Miller</h3>
-          <h4 class="title">202200001@gordoncollege.edu.ph</h4>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-      <div class="our-team">
-        <div class="picture">
-          <img class="img-fluid" src="https://picsum.photos/130/130?image=1027">
-        </div>
-        <div class="team-content">
-          <h3 class="name">Michele Miller</h3>
-          <h4 class="title">202200001@gordoncollege.edu.ph</h4>
-        </div>
-      </div>
-    </div>
-  </div>
+ </div>
 </div>
-
-
-
-
-
-
-
 
 <div *ngIf="!isTilesView">
   <div class="row">
     <div class="col-sm-12">
       <div class="dropdown-container">
-          <input type="text" id="searchInput" placeholder="Instructor Name">
+        <div class="dropdown">
+          <select id="courseDropdown" placeholder="Student department">
+            <option value="" disabled selected>Select Department</option>
+            <option value="BSCS">College of Computer Studies - CCS</option>
+            <option value="BSIT">College of Education, Arts and Sciences - CEAS</option>
+            <option value="ACT">College of Allied Health Studies - CAHS</option>
+            <option value="ACT">College of Hospitality, Tourism and Management - CHTM</option>
+            <option value="ACT">College of Business and Accountancy - CBA</option>
+          </select>
         </div>
+        <div>
+          <input type="text" id="searchInput" placeholder="Student Name">
         </div>
       </div>
-      <div class="dropdown-container">
+      <div class="table-wrapper">
         <table class="fl-table">
           <thead>
-            <tr>
-              <th>DB #</th>
-              <th>LAST NAME</th>
-              <th>FIRST NAME</th>
-              <th>MIDDLE NAME</th>
-              <th>NO. OF CLASS</th>
-              <th>RFID #</th>
-              <th>MOBILE #</th>
-              <th>DOMAIN EMAIL</th>
-              <th>ALT EMAIL</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Miller</td>
-              <td>Michelle</td>
-              <td>Dy</td>
-              <td>4</td>
-              <td>RFID123</td>
-              <td>123-456-7890</td>
-              <td>john.doe@example.com</td>
-              <td>john.doe@gmail.com</td>
-
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Miller</td>
-              <td>Michelle</td>
-              <td>Dy</td>
-              <td>4</td>
-              <td>RFID123</td>
-              <td>123-456-7890</td>
-              <td>john.doe@example.com</td>
-              <td>john.doe@gmail.com</td>
-
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Miller</td>
-              <td>Michelle</td>
-              <td>Dy</td>
-              <td>4</td>
-              <td>RFID123</td>
-              <td>123-456-7890</td>
-              <td>john.doe@example.com</td>
-              <td>john.doe@gmail.com</td>
-
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Miller</td>
-              <td>Michelle</td>
-              <td>Dy</td>
-              <td>4</td>
-              <td>RFID123</td>
-              <td>123-456-7890</td>
-              <td>john.doe@example.com</td>
-              <td>john.doe@gmail.com</td>
-
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Miller</td>
-              <td>Michelle</td>
-              <td>Dy</td>
-              <td>4</td>
-              <td>RFID123</td>
-              <td>123-456-7890</td>
-              <td>john.doe@example.com</td>
-              <td>john.doe@gmail.com</td>
-
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Miller</td>
-              <td>Michelle</td>
-              <td>Dy</td>
-              <td>4</td>
-              <td>RFID123</td>
-              <td>123-456-7890</td>
-              <td>john.doe@example.com</td>
-              <td>john.doe@gmail.com</td>
-
-            </tr>
-
-            <tr>
-              <td>1</td>
-              <td>Miller</td>
-              <td>Michelle</td>
-              <td>Dy</td>
-              <td>4</td>
-              <td>RFID123</td>
-              <td>123-456-7890</td>
-              <td>john.doe@example.com</td>
-              <td>john.doe@gmail.com</td>
-
-            </tr>
-
-            <!-- Add more table rows here if needed -->
-          </tbody>
+    <tr>
+      <th>ID</th>
+      <th>Last Name</th>
+      <th>First Name</th>
+      <th>Middle Name</th>
+      <th>Number of Class</th>
+      <th>RFID</th>
+      <th>Mobile</th>
+      <th>Domain Email</th>
+      <th>Alt Email</th>
+    </tr>
+ </thead>
+ <tbody>
+    <tr *ngFor="let instructor of instructors">
+      <td>{{ instructor.id }}</td>
+      <td>{{ instructor.lastName }}</td>
+      <td>{{ instructor.firstName }}</td>
+      <td>{{ instructor.middleName }}</td>
+      <td>{{ instructor.numberOfClass }}</td>
+      <td>{{ instructor.rfid }}</td>
+      <td>{{ instructor.mobile }}</td>
+      <td>{{ instructor.domainEmail }}</td>
+      <td>{{ instructor.altEmail }}</td>
+      <td class="action-buttons">
+        <button class="primary" onclick="window.dialog.showModal();">View</button>
+        <button class="primary" onclick=";">Delete</button>
+      </td>
+    </tr>
+    
+ </tbody>
         </table>
       </div>
     </div>
+  </div>
+</div>
